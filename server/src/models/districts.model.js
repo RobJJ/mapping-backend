@@ -2,6 +2,7 @@ const districts = require("./districts.mongo");
 const { v4: uuidv4 } = require("uuid");
 
 async function getAllDistricts() {
+  // db.collection.find({ PROVINCE: { $exists: false } });
   return await districts.find(
     {},
     {
