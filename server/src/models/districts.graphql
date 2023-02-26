@@ -4,9 +4,12 @@ type Query {
 
 type District {
   PROVINCE: String!
+  REGION: String!
   DISTRICT: String!
-  DISTRICT_ID: String!
+  PROVINCE_ID: ID!
+  DISTRICT_ID: ID!
   POP_ZONE: String!
+  ECON_SCORE: String!
   FOREST_SCORE: String!
   AIR_SCORE: String!
   TEMP_SCORE: String!
