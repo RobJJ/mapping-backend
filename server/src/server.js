@@ -15,10 +15,9 @@ const { mongoConnect } = require("./services/mongo");
 const PORT = process.env.PORT;
 
 const resolversArray = loadFilesSync(path.join(__dirname, "**/*.resolvers.js"));
-// const typesArray = loadFilesSync("**/*", {
-//   extensions: ["graphql"],
-// });
-const typesArray = await readFile("./schema.graphql", "utf-8");
+const typesArray = loadFilesSync("**/*", {
+  extensions: ["graphql"],
+});
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,7 +49,7 @@ async function startApolloServer() {
   //   });
 
   app.listen(PORT, () => {
-    console.log(`Running graphQL apollo server...`.cyan);
+    console.log(`Running graphQL apollo server...`.magenta);
   });
 }
 

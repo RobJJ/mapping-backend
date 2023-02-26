@@ -2,9 +2,12 @@ const mongoose = require("mongoose");
 
 const districtSchema = new mongoose.Schema({
   PROVINCE: { type: String, required: true },
+  REGION: { type: String, required: true },
   DISTRICT: { type: String, required: true },
+  PROVINCE_ID: { type: String, required: true },
   DISTRICT_ID: { type: String, required: true },
   POP_ZONE: { type: String, required: true },
+  ECON_SCORE: { type: String, required: true },
   FOREST_SCORE: { type: String, required: true },
   AIR_SCORE: { type: String, required: true },
   TEMP_SCORE: { type: String, required: true },
