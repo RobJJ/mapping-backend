@@ -1,5 +1,5 @@
 type Query {
-  districts: [District]
+  districts: [District!]
 }
 
 type District {

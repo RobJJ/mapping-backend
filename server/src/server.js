@@ -22,7 +22,7 @@ const typesArray = loadFilesSync("**/*", {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 async function startApolloServer() {
-  const app = require("./app");
+  const app = require("./app.js");
 
   const schema = makeExecutableSchema({
     typeDefs: typesArray,
@@ -50,6 +50,8 @@ async function startApolloServer() {
 
   app.listen(PORT, () => {
     console.log(`Running graphQL apollo server...`.magenta);
+    console.log(`Server running on port ${PORT}`.magenta);
+    console.log(`GraphQL endpoint: http://localhost:${PORT}/graphql`.magenta);
   });
 }
 

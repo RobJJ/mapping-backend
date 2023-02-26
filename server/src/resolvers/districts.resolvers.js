@@ -5,7 +5,7 @@ const districtModel = require("../models/districts.model");
 module.exports = {
   Query: {
     districts: () => {
-      return "Hello world";
+      return districtModel.getAllDistricts();
     },
   },
 };

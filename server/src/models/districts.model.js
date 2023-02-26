@@ -1,5 +1,16 @@
 const districts = require("./districts.mongo");
 const { v4: uuidv4 } = require("uuid");
+
+async function getAllDistricts() {
+  return await districts.find(
+    {},
+    {
+      _id: 0,
+      //   __v: 0,
+    }
+  );
+}
+
 //
 // get all the books from the DB
 // async function getAllBooks() {
@@ -67,11 +78,6 @@ const { v4: uuidv4 } = require("uuid");
 // //
 // //
 // //
-// module.exports = {
-//   getAllBooks,
-//   getBooksByRating,
-//   addNewBook,
-//   deleteBookWithId,
-//   deleteBookWithId,
-//   editBookWithId,
-// };
+module.exports = {
+  getAllDistricts,
+};
