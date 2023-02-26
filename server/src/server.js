@@ -32,6 +32,7 @@ async function startApolloServer() {
 
   const server = new ApolloServer({
     schema: schema,
+    // context will go here later
   });
 
   // still going to connect to mongo here for DB
@@ -40,6 +41,7 @@ async function startApolloServer() {
   await server.start();
   // new apollo version 4
   // tell express to forward any requests at this path to apolloServer!
+  // context will be 2nd para later
   app.use("/graphql", expressMiddleware(server));
   // old apollo way V3 ---> connect the middleware with express server
   //   server.applyMiddleware({

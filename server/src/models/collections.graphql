@@ -1,0 +1,40 @@
+type Query {
+  districts: [District]
+}
+
+type District {
+  PROVINCE: String!
+  DISTRICT: String!
+  DISTRICT_ID: String!
+  POP_ZONE: String!
+  FOREST_SCORE: String!
+  AIR_SCORE: String!
+  TEMP_SCORE: String!
+  ENVR_SCORE: String!
+  COLOR: String!
+}
+
+# type Query {
+#   books: [Book]
+#   booksByRating(minRating: Int!): [Book]
+# }
+
+# type Mutation {
+#   addNewBook(name: String!, author: String!, rating: String!): Book
+#   deleteBookWithId(bookId: ID!): Book
+#   editBookWithId(bookId: ID!, book: BookInput!): Book
+# }
+
+# type Book {
+#   inStock: Boolean
+#   bookId: ID
+#   name: String!
+#   author: String!
+#   rating: String!
+# }
+
+# input BookInput {
+#   name: String!
+#   author: String!
+#   rating: String!
+# }
