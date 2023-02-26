@@ -4,6 +4,9 @@ const districtModel = require("../models/districts.model");
 
 module.exports = {
   Query: {
+    districtById: (_parent, args) => {
+      return districtModel.getDistrictById(args.id);
+    },
     districts: () => {
       return districtModel.getAllDistricts();
     },

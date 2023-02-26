@@ -6,6 +6,17 @@ async function getAllDistricts() {
   return await districts.find(
     {},
     {
+      // think about what is best to keep out of the cache?
+      _id: 0,
+      //   __v: 0,
+    }
+  );
+}
+
+async function getDistrictById(id) {
+  return await districts.find(
+    { DISTRICT_ID: id },
+    {
       _id: 0,
       //   __v: 0,
     }
@@ -81,4 +92,5 @@ async function getAllDistricts() {
 // //
 module.exports = {
   getAllDistricts,
+  getDistrictById,
 };

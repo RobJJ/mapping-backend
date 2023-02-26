@@ -1,5 +1,6 @@
 type Query {
   districts: [District!]
+  districtById(id: ID!): [District!]
 }
 
 type District {
