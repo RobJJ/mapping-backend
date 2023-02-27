@@ -24,7 +24,7 @@ async function getDistrictById(id) {
 // we dont have year yet for this function
 async function getDistrictsByMultiParam(REGION, PROVINCE, POP_ZONE) {
   const filterOptions = {};
-
+  // try neaten this up in future.. flow revised
   if (REGION && REGION !== "") {
     filterOptions.REGION = REGION;
   }
