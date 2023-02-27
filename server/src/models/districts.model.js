@@ -2,7 +2,6 @@ const districts = require("./districts.mongo");
 const { v4: uuidv4 } = require("uuid");
 
 async function getAllDistricts() {
-  // db.collection.find({ PROVINCE: { $exists: false } });
   return await districts.find(
     {},
     {
@@ -22,7 +21,24 @@ async function getDistrictById(id) {
     }
   );
 }
+// we dont have year yet for this function
+async function getDistrictsByMultiParam(REGION, PROVINCE, POP_ZONE) {
+  const filterOptions = {};
 
+  if (REGION && REGION !== "") {
+    filterOptions.REGION = REGION;
+  }
+
+  if (PROVINCE && PROVINCE !== "") {
+    filterOptions.PROVINCE = PROVINCE;
+  }
+
+  if (POP_ZONE && POP_ZONE !== "") {
+    filterOptions.POP_ZONE = POP_ZONE;
+  }
+
+  return await districts.find(filterOptions, { _id: 0 });
+}
 //
 // get all the books from the DB
 // async function getAllBooks() {
@@ -93,4 +109,5 @@ async function getDistrictById(id) {
 module.exports = {
   getAllDistricts,
   getDistrictById,
+  getDistrictsByMultiParam,
 };

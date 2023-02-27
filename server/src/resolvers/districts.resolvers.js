@@ -4,11 +4,21 @@ const districtModel = require("../models/districts.model");
 
 module.exports = {
   Query: {
-    districtById: (_parent, args) => {
+    district: (_parent, args) => {
       return districtModel.getDistrictById(args.id);
     },
     districts: () => {
       return districtModel.getAllDistricts();
+    },
+    districtsBy: (_parent, { input }, context) => {
+      // we dont have year yet on this data
+      const { REGION, PROVINCE, POP_ZONE } = input;
+      return districtModel.getDistrictsByMultiParam(
+        // YEAR,
+        REGION,
+        PROVINCE,
+        POP_ZONE
+      );
     },
   },
 };

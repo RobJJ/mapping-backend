@@ -1,6 +1,7 @@
 type Query {
+  district(id: ID!): [District!]
   districts: [District!]
-  districtById(id: ID!): [District!]
+  districtsBy(input: MultiParamInput!): [District!]
 }
 
 type District {
@@ -17,6 +18,18 @@ type District {
   ENVR_SCORE: String!
   COLOR: String!
 }
+
+# could be better to switch this to year/region_id/province_id/pop_zone
+# this layout would be safer to use and extremely powerful! pretty much every query handled for your app in this one query!!
+input MultiParamInput {
+  # we dont have year yet on this data
+  # YEAR: String
+  REGION: String!
+  PROVINCE: String!
+  POP_ZONE: String!
+}
+
+# I wonder if its worth creating a multilevel type that have a bunch a associated properties... like the distrcit has a region of type Region.. and province of type province.. when then each contain all the districts in their respected region/province
 
 # type Query {
 #   books: [Book]
