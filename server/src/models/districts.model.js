@@ -30,24 +30,16 @@ async function getDistrictsByMultiParam(
 ) {
   const filterOptions = {};
   // try neaten this up in future.. flow revised
-  if (YEAR && YEAR !== "") {
+  if (YEAR) {
     filterOptions.YEAR = YEAR;
   }
-  if (REGION_ID && REGION_ID !== "") {
+  if (REGION_ID) {
     filterOptions.REGION_ID = REGION_ID;
   }
-  if (PROVINCE_ID && PROVINCE_ID !== "") {
+  if (PROVINCE_ID) {
     filterOptions.PROVINCE_ID = PROVINCE_ID;
   }
-  // if (REGION && REGION !== "") {
-  //   filterOptions.REGION = REGION;
-  // }
-
-  // if (PROVINCE && PROVINCE !== "") {
-  //   filterOptions.PROVINCE = PROVINCE;
-  // }
-
-  if (POP_ZONE && POP_ZONE !== "") {
+  if (POP_ZONE) {
     filterOptions.POP_ZONE = POP_ZONE;
   }
 

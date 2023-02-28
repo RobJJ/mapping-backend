@@ -11,7 +11,6 @@ module.exports = {
       return districtModel.getAllDistricts();
     },
     districtsBy: (_parent, { input }, context) => {
-      // we dont have year yet on this data
       const { YEAR, REGION_ID, PROVINCE_ID, POP_ZONE } = input;
       return districtModel.getDistrictsByMultiParam(
         YEAR,

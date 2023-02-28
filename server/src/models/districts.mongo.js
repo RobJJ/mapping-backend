@@ -5,6 +5,7 @@ const districtSchema = new mongoose.Schema({
   PROVINCE: { type: String, required: true },
   REGION: { type: String, required: true },
   DISTRICT: { type: String, required: true },
+  REGION_ID: { type: String, required: true },
   PROVINCE_ID: { type: String, required: true },
   DISTRICT_ID: { type: String, required: true },
   POP_ZONE: { type: String, required: true },
