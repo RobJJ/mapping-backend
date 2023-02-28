@@ -22,19 +22,30 @@ async function getDistrictById(id) {
   );
 }
 // we dont have year yet for this function
-async function getDistrictsByMultiParam(YEAR, REGION, PROVINCE, POP_ZONE) {
+async function getDistrictsByMultiParam(
+  YEAR,
+  REGION_ID,
+  PROVINCE_ID,
+  POP_ZONE
+) {
   const filterOptions = {};
   // try neaten this up in future.. flow revised
-  if (YEAR) {
+  if (YEAR && YEAR !== "") {
     filterOptions.YEAR = YEAR;
   }
-  if (REGION && REGION !== "") {
-    filterOptions.REGION = REGION;
+  if (REGION_ID && REGION_ID !== "") {
+    filterOptions.REGION_ID = REGION_ID;
   }
+  if (PROVINCE_ID && PROVINCE_ID !== "") {
+    filterOptions.PROVINCE_ID = PROVINCE_ID;
+  }
+  // if (REGION && REGION !== "") {
+  //   filterOptions.REGION = REGION;
+  // }
 
-  if (PROVINCE && PROVINCE !== "") {
-    filterOptions.PROVINCE = PROVINCE;
-  }
+  // if (PROVINCE && PROVINCE !== "") {
+  //   filterOptions.PROVINCE = PROVINCE;
+  // }
 
   if (POP_ZONE && POP_ZONE !== "") {
     filterOptions.POP_ZONE = POP_ZONE;

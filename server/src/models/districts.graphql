@@ -9,6 +9,7 @@ type District {
   PROVINCE: String!
   REGION: String!
   DISTRICT: String!
+  REGION_ID: ID!
   PROVINCE_ID: ID!
   DISTRICT_ID: ID!
   POP_ZONE: String!
@@ -31,8 +32,10 @@ type District {
 input MultiParamInput {
   # YEAR: StringOrNull!
   YEAR: String
-  REGION: String
-  PROVINCE: String
+  # REGION: String
+  REGION_ID: ID
+  # PROVINCE: String
+  PROVINCE_ID: ID
   POP_ZONE: String
 }
 
