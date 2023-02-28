@@ -22,9 +22,12 @@ async function getDistrictById(id) {
   );
 }
 // we dont have year yet for this function
-async function getDistrictsByMultiParam(REGION, PROVINCE, POP_ZONE) {
+async function getDistrictsByMultiParam(YEAR, REGION, PROVINCE, POP_ZONE) {
   const filterOptions = {};
   // try neaten this up in future.. flow revised
+  if (YEAR) {
+    filterOptions.YEAR = YEAR;
+  }
   if (REGION && REGION !== "") {
     filterOptions.REGION = REGION;
   }
@@ -39,6 +42,7 @@ async function getDistrictsByMultiParam(REGION, PROVINCE, POP_ZONE) {
 
   return await districts.find(filterOptions, { _id: 0 });
 }
+
 //
 // get all the books from the DB
 // async function getAllBooks() {

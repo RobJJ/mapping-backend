@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const districtSchema = new mongoose.Schema({
+  YEAR: { type: String, required: true },
   PROVINCE: { type: String, required: true },
   REGION: { type: String, required: true },
   DISTRICT: { type: String, required: true },
