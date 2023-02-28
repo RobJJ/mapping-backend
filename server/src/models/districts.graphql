@@ -18,7 +18,7 @@ type District {
   AIR_SCORE: String!
   TEMP_SCORE: String!
   ENVR_SCORE: String!
-  COLOR: String!
+  # COLOR: String!
 }
 
 # could be better to switch this to year/region_id/province_id/pop_zone
