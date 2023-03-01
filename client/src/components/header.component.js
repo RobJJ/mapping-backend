@@ -1,6 +1,6 @@
 export function HeaderSection(params) {
   return (
-    <div className="bg-blue-200 w-100 text-center">
+    <div className="bg-blue-200 w-full text-center">
       <h1 className="text-3xl mb-2">
         Let's consume our graphQL API using Apollo-Client
       </h1>
