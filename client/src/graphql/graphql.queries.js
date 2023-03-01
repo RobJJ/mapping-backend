@@ -9,7 +9,7 @@ export const client = new ApolloClient({
 
 export const DISTRICTS_BY_QUERY = gql`
   query DistrictsByQuery($input: MultiParamInput!) {
-    districts: districtsBy(input: $input) {
+    districtsBy(input: $input) {
       # this is where we can use fragments to set up different return values?
       YEAR
       REGION

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { OutputSection } from "./output.component";
 
 const defaultLocalOptions = {
-  YEAR: "2021",
+  YEAR: "",
   REGION_ID: "",
   PROVINCE_ID: "",
   DISTRICT_ID: "",
@@ -16,6 +16,7 @@ export function InputSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Filters submitted");
     setPassedFilterOptions({ ...localOptions });
     setLocalOptions(defaultLocalOptions);
   };

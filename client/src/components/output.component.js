@@ -9,10 +9,18 @@ export function OutputSection({ filterOptions }) {
     DISTRICT_ID,
     POP_ZONE
   );
+
+  if (loading) {
+    return <div>Loading the data...</div>;
+  }
+
   return (
     <div className="bg-purple-200 w-full h-full flex flex-col">
       <h2>Output based on the given filters</h2>
-      <div>Output will go here</div>
+      {districts &&
+        districts.map((district) => {
+          return <div>{district.DISTRICT}</div>;
+        })}
     </div>
   );
 }
