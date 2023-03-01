@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(morgan("combined"));
 app.use(
   cors({
-    origin: "http://localhost:8000/graphql",
+    // origin: "http://localhost:8000/graphql",
+    origin: "http://localhost:3000",
   })
 );
 

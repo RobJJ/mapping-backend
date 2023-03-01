@@ -7,7 +7,6 @@ export function MainPage(params) {
     <div className="w-screen h-screen bg-[#f5f5f5] p-5 flex flex-col">
       <HeaderSection />
       <InputSection />
-      <OutputSection />
     </div>
   );
 }
