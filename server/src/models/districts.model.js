@@ -26,6 +26,7 @@ async function getDistrictsByMultiParam(
   YEAR,
   REGION_ID,
   PROVINCE_ID,
+  DISTRICT_ID,
   POP_ZONE
 ) {
   const filterOptions = {};
@@ -38,6 +39,9 @@ async function getDistrictsByMultiParam(
   }
   if (PROVINCE_ID) {
     filterOptions.PROVINCE_ID = PROVINCE_ID;
+  }
+  if (DISTRICT_ID) {
+    filterOptions.DISTRICT_ID = DISTRICT_ID;
   }
   if (POP_ZONE) {
     filterOptions.POP_ZONE = POP_ZONE;

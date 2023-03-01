@@ -36,6 +36,7 @@ input MultiParamInput {
   REGION_ID: ID
   # PROVINCE: String
   PROVINCE_ID: ID
+  DISTRICT_ID: ID
   POP_ZONE: String
 }
 

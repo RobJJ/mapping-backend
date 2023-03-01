@@ -11,11 +11,12 @@ module.exports = {
       return districtModel.getAllDistricts();
     },
     districtsBy: (_parent, { input }, context) => {
-      const { YEAR, REGION_ID, PROVINCE_ID, POP_ZONE } = input;
+      const { YEAR, REGION_ID, PROVINCE_ID, DISTRICT_ID, POP_ZONE } = input;
       return districtModel.getDistrictsByMultiParam(
         YEAR,
         REGION_ID,
         PROVINCE_ID,
+        DISTRICT_ID,
         POP_ZONE
       );
       // return districtModel.getDistrictsByMultiParam(input);
