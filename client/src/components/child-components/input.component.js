@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { OutputSection } from "./output.component";
-
 const defaultLocalOptions = {
   YEAR: "",
   REGION_ID: "",
@@ -29,7 +27,6 @@ export function InputSection({ setFilterOptions }) {
             <input
               type="text"
               className="text-center p-1 rounded-lg"
-              placeholder=""
               value={localOptions.YEAR}
               onChange={(e) =>
                 setLocalOptions({ ...localOptions, YEAR: e.target.value })
