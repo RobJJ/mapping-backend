@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDistrictsBy } from "../graphql/graphql.hooks";
+import { useDistrictsBy } from "../../graphql/graphql.hooks";
 
 export function OutputSection({ filterOptions }) {
   useEffect(() => {

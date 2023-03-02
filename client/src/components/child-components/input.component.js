@@ -10,14 +10,13 @@ const defaultLocalOptions = {
   POP_ZONE: "",
 };
 
-export function InputSection() {
+export function InputSection({ setFilterOptions }) {
   const [localOptions, setLocalOptions] = useState(defaultLocalOptions);
-  const [passedFilterOptions, setPassedFilterOptions] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Filters submitted");
-    setPassedFilterOptions({ ...localOptions });
+    setFilterOptions({ ...localOptions });
     setLocalOptions(defaultLocalOptions);
   };
 
@@ -30,6 +29,7 @@ export function InputSection() {
             <input
               type="text"
               className="text-center p-1 rounded-lg"
+              placeholder=""
               value={localOptions.YEAR}
               onChange={(e) =>
                 setLocalOptions({ ...localOptions, YEAR: e.target.value })
@@ -93,7 +93,6 @@ export function InputSection() {
           </button>
         </div>
       </form>
-      <OutputSection filterOptions={passedFilterOptions} />
     </div>
   );
 }

@@ -29,6 +29,7 @@ type District {
 
 # scalar Nullable
 # Making
+# These input types need to be enums because they should only accept certain options that correspond to the
 input MultiParamInput {
   # YEAR: StringOrNull!
   YEAR: String
