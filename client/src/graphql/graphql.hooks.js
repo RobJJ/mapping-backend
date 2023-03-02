@@ -10,16 +10,18 @@ export function useDistrictsBy(
 ) {
   const { data, loading, error } = useQuery(DISTRICTS_BY_QUERY, {
     variables: {
-      YEAR,
-      REGION_ID,
-      PROVINCE_ID,
-      DISTRICT_ID,
-      POP_ZONE,
+      input: {
+        YEAR,
+        REGION_ID,
+        PROVINCE_ID,
+        DISTRICT_ID,
+        POP_ZONE,
+      },
     },
   });
-
+  console.log("useDistrictsBy hook called.. the data is :", data);
   return {
-    districts: data?.districts,
+    districts: data?.districtsBy,
     loading,
     error: Boolean(error),
   };
