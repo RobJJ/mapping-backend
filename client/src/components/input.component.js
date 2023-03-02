@@ -41,9 +41,9 @@ export function InputSection() {
             <input
               type="text"
               className="text-center p-1 rounded-lg"
-              value={localOptions.REGION}
+              value={localOptions.REGION_ID}
               onChange={(e) =>
-                setLocalOptions({ ...localOptions, REGION: e.target.value })
+                setLocalOptions({ ...localOptions, REGION_ID: e.target.value })
               }
             />
           </div>

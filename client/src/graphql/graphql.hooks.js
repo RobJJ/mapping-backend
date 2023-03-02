@@ -20,7 +20,9 @@ export function useDistrictsBy(
     },
   });
   console.log("useDistrictsBy hook called.. the data is :", data);
+
   return {
+    // districtsBy is the tag read from query.. so data.districtsBy gets that array
     districts: data?.districtsBy,
     loading,
     error: Boolean(error),
