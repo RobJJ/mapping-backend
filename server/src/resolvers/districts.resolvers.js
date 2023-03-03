@@ -21,6 +21,12 @@ module.exports = {
       );
       // return districtModel.getDistrictsByMultiParam(input);
     },
+    uniqueYearInfo: (_parent, args, context) => {
+      return districtModel.getYearInfo();
+    },
+    uniqueRegionInfo: (_parent, args, context) => {
+      return districtModel.getRegionInfo();
+    },
   },
 };
 

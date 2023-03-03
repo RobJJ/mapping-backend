@@ -2,6 +2,18 @@ type Query {
   district(id: ID!): [District!]
   districts: [District!]
   districtsBy(input: MultiParamInput!): [District!]
+  uniqueYearInfo: UniqueYears!
+  uniqueRegionInfo: [UniqueRegions!]
+}
+
+# returns this array of strings
+type UniqueYears {
+  uniqueYears: [String!]
+}
+
+type UniqueRegions {
+  REGION: String!
+  REGION_ID: ID!
 }
 
 type District {

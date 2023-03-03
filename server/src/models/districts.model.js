@@ -1,6 +1,7 @@
 const districts = require("./districts.mongo");
 const { v4: uuidv4 } = require("uuid");
 
+// this func is superceded by multi param query
 async function getAllDistricts() {
   return await districts.find(
     {},
@@ -11,7 +12,7 @@ async function getAllDistricts() {
     }
   );
 }
-
+// this func is superceded by multi param query
 async function getDistrictById(id) {
   return await districts.find(
     { DISTRICT_ID: id },
@@ -49,7 +50,19 @@ async function getDistrictsByMultiParam(
 
   return await districts.find(filterOptions, { _id: 0 });
 }
-
+//
+// Lets get array of years that exists in the database
+async function getYearInfo() {
+  const uniqueYears = await districts.distinct("YEAR");
+  return { uniqueYears };
+}
+//
+// lets get an array of objects that contain REGION and REGION ID props
+async function getRegionInfo() {
+  // get unique regions in database
+  const uniqueRegions = await districts.distinct("REGION");
+  const uniqueRegionsIds = await districts.distinct("");
+}
 //
 // get all the books from the DB
 // async function getAllBooks() {
@@ -121,4 +134,5 @@ module.exports = {
   getAllDistricts,
   getDistrictById,
   getDistrictsByMultiParam,
+  getYearInfo,
 };
