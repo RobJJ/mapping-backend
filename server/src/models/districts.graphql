@@ -12,14 +12,9 @@ type UniqueYears {
 }
 
 type UniqueRegions {
-  REGION: String!
-  REGION_ID: String!
+  _id: String!
+  regionId: String!
 }
-
-# type UniqueRegions {
-#   REGION: String!
-#   REGION_ID: ID!
-# }
 
 type District {
   YEAR: String!

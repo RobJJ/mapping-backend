@@ -65,7 +65,8 @@ async function getRegionsAndIds() {
       $group: { _id: "$REGION", regionId: { $first: "$REGION_ID" } },
     },
   ]);
-  return { uniqueRegionsAndIds };
+  // console.log(uniqueRegionsAndIds);
+  return uniqueRegionsAndIds;
   // this is a Map object with same shit, just named better.. test purpose
   // const testMap = new Map();
   // uniqueObjects.forEach((region) => {
