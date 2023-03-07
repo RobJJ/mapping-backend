@@ -11,17 +11,13 @@ const defaultLocalOptions = {
 
 export function InputSection({ setFilterOptions }) {
   const [localOptions, setLocalOptions] = useState(defaultLocalOptions);
-  const { data, loading, error } = useUniqueYears();
+  // const { data, loading, error } = useUniqueYears();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Filters submitted");
     setFilterOptions({ ...localOptions });
     setLocalOptions(defaultLocalOptions);
-  };
-
-  const testFunction = () => {
-    console.log(data.uniqueYears.uniqueYears);
   };
 
   return (
@@ -90,16 +86,9 @@ export function InputSection({ setFilterOptions }) {
             />
           </div>
         </div>
-        <div className="bg-green-300 text-center text-xl pb-5 flex justify-center gap-2">
+        <div className="bg-green-300 text-center text-xl pb-5">
           <button type="submit" className="bg-gray-200 py-1 px-4 rounded-lg">
             filter database
-          </button>
-          <button
-            type="button"
-            className="bg-gray-200 py-1 px-4 rounded-lg"
-            onClick={testFunction}
-          >
-            get years test
           </button>
         </div>
       </form>
