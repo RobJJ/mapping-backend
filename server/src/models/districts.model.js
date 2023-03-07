@@ -59,9 +59,33 @@ async function getYearInfo() {
 //
 // lets get an array of objects that contain REGION and REGION ID props
 async function getRegionInfo() {
-  // get unique regions in database
-  const uniqueRegions = await districts.distinct("REGION");
-  const uniqueRegionsIds = await districts.distinct("");
+  // get unique regions in database - returns arr of string regions
+  // const uniqueRegions = await districts
+  //   .distinct("REGION")
+  const uniqueObjects = await districts.aggregate([
+    {
+      $group: { _id: "$REGION", regionId: { $first: "$REGION_ID" } },
+    },
+  ]);
+  const testMap = new Map();
+  uniqueObjects.forEach((region) => {
+    testMap.set(region._id, region.regionId);
+  });
+  console.log(testMap);
+  //  User.aggregate([
+  //    {
+  //      $group: {
+  //        _id: "$country",
+  //        countryId: { $first: "$_id" },
+  //      },
+  //    },
+  //  ])
+  //    .then((countries) => {
+  //      console.log(countries); // [{ _id: 'USA', countryId: '...' }, { _id: 'Canada', countryId: '...' }, ...]
+  //    })
+  //    .catch((err) => {
+  //      console.error(err);
+  //    });
 }
 //
 // get all the books from the DB
@@ -135,4 +159,5 @@ module.exports = {
   getDistrictById,
   getDistrictsByMultiParam,
   getYearInfo,
+  getRegionInfo,
 };
