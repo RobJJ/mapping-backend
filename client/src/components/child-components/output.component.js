@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useDistrictsBy } from "../../graphql/graphql.hooks";
-import { useUniqueYears } from "../../graphql/graphql.hooks";
 
 export function OutputSection({ filterOptions }) {
-  const { data } = useUniqueYears();
   useEffect(() => {
     console.log("Output rerendered");
   }, [filterOptions]);

@@ -11,7 +11,6 @@ const defaultLocalOptions = {
 
 export function InputSection({ setFilterOptions }) {
   const [localOptions, setLocalOptions] = useState(defaultLocalOptions);
-  // const { data, loading, error } = useUniqueYears();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
