@@ -21,11 +21,11 @@ module.exports = {
       );
       // return districtModel.getDistrictsByMultiParam(input);
     },
-    uniqueYearInfo: (_parent, args, context) => {
-      return districtModel.getYearInfo();
+    uniqueYears: (_parent, args, context) => {
+      return districtModel.getYears();
     },
-    uniqueRegionInfo: (_parent, args, context) => {
-      return districtModel.getRegionInfo();
+    uniqueRegions: (_parent, args, context) => {
+      return districtModel.getRegionsAndIds();
     },
   },
 };

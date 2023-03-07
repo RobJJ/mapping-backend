@@ -21,3 +21,11 @@ export const DISTRICTS_BY_QUERY = gql`
     }
   }
 `;
+
+export const UNIQUE_YEARS = gql`
+  query YearsByQuery {
+    uniqueYears {
+      uniqueYears
+    }
+  }
+`;

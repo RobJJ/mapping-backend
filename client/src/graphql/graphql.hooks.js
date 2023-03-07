@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { DISTRICTS_BY_QUERY } from "./graphql.queries";
+import { DISTRICTS_BY_QUERY, UNIQUE_YEARS } from "./graphql.queries";
 
 export function useDistrictsBy(
   YEAR,
@@ -24,6 +24,17 @@ export function useDistrictsBy(
   return {
     // districtsBy is the tag read from query.. so data.districtsBy gets that array
     districts: data?.districtsBy,
+    loading,
+    error: Boolean(error),
+  };
+}
+
+export function useUniqueYears() {
+  console.log("being called!");
+  const { data, loading, error } = useQuery(UNIQUE_YEARS);
+
+  return {
+    data,
     loading,
     error: Boolean(error),
   };
