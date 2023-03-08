@@ -57,9 +57,13 @@ async function getYears() {
   return { uniqueYears };
 }
 //
+
+// ******* these functions could be used to provide unique information on the regions-provinces-districts so that it can be used on the map without having to do an opperation.. These will be called and stored in cache.. eg,, number of provinces in a region, or districts in a province.. etc
+
 // lets get an array of objects that contain REGION and REGION ID props
 async function getRegionsAndIds() {
   // returns an arr of regions and their ids.. format.. _id: "REGION", regionId: "REGION_ID"
+  // the aggregate method is a powerful way of doing opperations on a model!! learn it!
   const uniqueRegionsAndIds = await districts.aggregate([
     {
       $group: { _id: "$REGION", regionId: { $first: "$REGION_ID" } },
@@ -82,6 +86,16 @@ async function getProvincesAndIds() {
   ]);
   console.log(uniqueProvincesAndIds.length);
   return uniqueProvincesAndIds;
+}
+
+async function getDistrictsAndIds() {
+  const uniqueDistrictsAndIds = await districts.aggregate([
+    {
+      $group: { _id: "$DISTRICT", districtId: { $first: "$DISTRICT_ID" } },
+    },
+  ]);
+  console.log(uniqueDistrictsAndIds.length);
+  return uniqueDistrictsAndIds;
 }
 //
 // get all the books from the DB
@@ -157,4 +171,5 @@ module.exports = {
   getYears,
   getRegionsAndIds,
   getProvincesAndIds,
+  getDistrictsAndIds,
 };

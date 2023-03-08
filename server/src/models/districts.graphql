@@ -5,6 +5,7 @@ type Query {
   uniqueYears: UniqueYears!
   uniqueRegions: [UniqueRegions!]
   uniqueProvinces: [UniqueProvinces!]
+  uniqueDistricts: [UniqueDistricts!]
 }
 
 # returns this array of strings
@@ -20,6 +21,11 @@ type UniqueRegions {
 type UniqueProvinces {
   _id: String!
   provinceId: String!
+}
+
+type UniqueDistricts {
+  _id: String!
+  districtId: String!
 }
 
 type District {

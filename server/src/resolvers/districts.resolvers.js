@@ -30,6 +30,9 @@ module.exports = {
     uniqueProvinces: (_parent, args, context) => {
       return districtModel.getProvincesAndIds();
     },
+    uniqueDistricts: (_parent, args, context) => {
+      return districtModel.getDistrictsAndIds();
+    },
   },
 };
 
