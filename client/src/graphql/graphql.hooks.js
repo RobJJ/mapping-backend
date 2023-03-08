@@ -3,6 +3,8 @@ import {
   DISTRICTS_BY_QUERY,
   UNIQUE_YEARS,
   UNIQUE_REGIONS,
+  UNIQUE_PROVINCES,
+  UNIQUE_DISTRICTS,
 } from "./graphql.queries";
 
 export function useDistrictsBy(
@@ -22,6 +24,7 @@ export function useDistrictsBy(
         POP_ZONE,
       },
     },
+    fetchPolicy: "cache-first",
   });
   console.log("useDistrictsBy hook called.. the data is :", data);
 
@@ -47,6 +50,28 @@ export function useUniqueYears() {
 export function useUniqueRegions() {
   console.log("unique regions hook is being called!");
   const { data, loading, error } = useQuery(UNIQUE_REGIONS);
+
+  return {
+    data,
+    loading,
+    error: Boolean(error),
+  };
+}
+
+export function useUniqueProvinces() {
+  console.log("unique provinces hook is being called!");
+  const { data, loading, error } = useQuery(UNIQUE_PROVINCES);
+
+  return {
+    data,
+    loading,
+    error: Boolean(error),
+  };
+}
+
+export function useUniqueDistricts() {
+  console.log("unique districts hook is being called!");
+  const { data, loading, error } = useQuery(UNIQUE_DISTRICTS);
 
   return {
     data,

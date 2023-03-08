@@ -39,3 +39,21 @@ export const UNIQUE_REGIONS = gql`
     }
   }
 `;
+
+export const UNIQUE_PROVINCES = gql`
+  query ProvincesByQuery {
+    uniqueProvinces {
+      _id
+      provinceId
+    }
+  }
+`;
+
+export const UNIQUE_DISTRICTS = gql`
+  query DistrictsByQuery {
+    uniqueDistricts {
+      _id
+      districtId
+    }
+  }
+`;
