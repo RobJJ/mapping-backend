@@ -1,5 +1,9 @@
 import { useQuery } from "@apollo/client";
-import { DISTRICTS_BY_QUERY, UNIQUE_YEARS } from "./graphql.queries";
+import {
+  DISTRICTS_BY_QUERY,
+  UNIQUE_YEARS,
+  UNIQUE_REGIONS,
+} from "./graphql.queries";
 
 export function useDistrictsBy(
   YEAR,
@@ -32,6 +36,17 @@ export function useDistrictsBy(
 export function useUniqueYears() {
   console.log("unique years hook is being called!");
   const { data, loading, error } = useQuery(UNIQUE_YEARS);
+
+  return {
+    data,
+    loading,
+    error: Boolean(error),
+  };
+}
+
+export function useUniqueRegions() {
+  console.log("unique regions hook is being called!");
+  const { data, loading, error } = useQuery(UNIQUE_REGIONS);
 
   return {
     data,

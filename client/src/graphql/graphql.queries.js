@@ -30,3 +30,12 @@ export const UNIQUE_YEARS = gql`
     }
   }
 `;
+
+export const UNIQUE_REGIONS = gql`
+  query RegionsByQuery {
+    uniqueRegions {
+      _id
+      regionId
+    }
+  }
+`;
