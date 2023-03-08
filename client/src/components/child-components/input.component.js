@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useUniqueYears } from "../../graphql/graphql.hooks";
 
 const defaultLocalOptions = {
   YEAR: "",
@@ -22,7 +21,7 @@ export function InputSection({ setFilterOptions }) {
   return (
     <div className="flex flex-col">
       <form className="w-full bg-green-200 p-2" onSubmit={handleSubmit}>
-        <div className="bg-green-300 flex justify-evenly text-xl pt-5 pb-5">
+        <div className="bg-green-300 flex justify-evenly text-xl pt-5 pb-5 flex-wrap">
           <div className="flex flex-col text-center">
             <label className="underline pb-2">YEAR</label>
             <input

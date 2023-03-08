@@ -11,6 +11,7 @@ export const DISTRICTS_BY_QUERY = gql`
   query DistrictsByQuery($input: MultiParamInput!) {
     districtsBy(input: $input) {
       # this is where we can use fragments to set up different return values?
+      DISTRICT_ID
       YEAR
       REGION
       PROVINCE

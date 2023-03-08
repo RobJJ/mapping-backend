@@ -30,7 +30,7 @@ export function useDistrictsBy(
 }
 
 export function useUniqueYears() {
-  console.log("being called!");
+  console.log("unique years hook is being called!");
   const { data, loading, error } = useQuery(UNIQUE_YEARS);
 
   return {

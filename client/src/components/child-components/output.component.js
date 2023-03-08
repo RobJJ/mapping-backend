@@ -2,10 +2,6 @@ import { useEffect } from "react";
 import { useDistrictsBy } from "../../graphql/graphql.hooks";
 
 export function OutputSection({ filterOptions }) {
-  useEffect(() => {
-    console.log("Output rerendered");
-  }, [filterOptions]);
-
   const { YEAR, REGION_ID, PROVINCE_ID, DISTRICT_ID, POP_ZONE } = filterOptions;
   const { districts, loading, error } = useDistrictsBy(
     YEAR,
@@ -14,6 +10,10 @@ export function OutputSection({ filterOptions }) {
     DISTRICT_ID,
     POP_ZONE
   );
+
+  // useEffect(() => {
+  //   console.log("Output rerendered");
+  // }, [filterOptions]);
 
   if (loading) {
     return <div>Loading the data...</div>;
