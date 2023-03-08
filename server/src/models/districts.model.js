@@ -65,13 +65,23 @@ async function getRegionsAndIds() {
       $group: { _id: "$REGION", regionId: { $first: "$REGION_ID" } },
     },
   ]);
-  // console.log(uniqueRegionsAndIds);
+
   return uniqueRegionsAndIds;
   // this is a Map object with same shit, just named better.. test purpose
   // const testMap = new Map();
   // uniqueObjects.forEach((region) => {
   //   testMap.set(region._id, region.regionId);
   // });
+}
+
+async function getProvincesAndIds() {
+  const uniqueProvincesAndIds = await districts.aggregate([
+    {
+      $group: { _id: "$PROVINCE", provinceId: { $first: "$PROVINCE_ID" } },
+    },
+  ]);
+  console.log(uniqueProvincesAndIds.length);
+  return uniqueProvincesAndIds;
 }
 //
 // get all the books from the DB
@@ -146,4 +156,5 @@ module.exports = {
   getDistrictsByMultiParam,
   getYears,
   getRegionsAndIds,
+  getProvincesAndIds,
 };
