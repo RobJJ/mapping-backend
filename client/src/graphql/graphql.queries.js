@@ -57,3 +57,9 @@ export const UNIQUE_DISTRICTS = gql`
     }
   }
 `;
+
+export const GEOJSON = gql`
+query GeoJsonByQuery {
+  
+}
+`;

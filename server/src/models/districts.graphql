@@ -8,11 +8,27 @@ type Query {
   uniqueProvinces: [UniqueProvinces!]
   uniqueDistricts: [UniqueDistricts!]
 }
+#
+#
+#
+scalar JSON
+scalar Object
 
 type GeoJson {
+  type: String!
   name: String!
+  crs: Object!
+  features: [Features!]
+}
+type Features {
+  type: String!
+  properties: Object!
+  geometry: Object!
 }
 
+#
+#
+#
 # returns this array of strings
 type UniqueYears {
   uniqueYears: [String!]
