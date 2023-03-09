@@ -21,4 +21,4 @@ const districtSchema = new mongoose.Schema({
 // This is an object model that mongoose creates...
 
 // naming ?? not sure how in my case
-module.exports = mongoose.model("District", districtSchema);
+module.exports = mongoose.model("District", districtSchema, "districts");

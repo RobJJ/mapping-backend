@@ -1,9 +1,15 @@
 const { model } = require("mongoose");
 const districtModel = require("../models/districts.model");
+const geoModel = require("../models/geojson.model");
 //
 
 module.exports = {
   Query: {
+    // testing geoJSON data here
+    geoQuery: (_parent, args, context) => {
+      return geoModel.getAllGeoJson();
+    },
+
     district: (_parent, args) => {
       return districtModel.getDistrictById(args.id);
     },

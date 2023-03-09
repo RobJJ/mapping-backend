@@ -1,4 +1,5 @@
 type Query {
+  geoQuery: [GeoJson!]
   district(id: ID!): [District!]
   districts: [District!]
   districtsBy(input: MultiParamInput!): [District!]
@@ -6,6 +7,10 @@ type Query {
   uniqueRegions: [UniqueRegions!]
   uniqueProvinces: [UniqueProvinces!]
   uniqueDistricts: [UniqueDistricts!]
+}
+
+type GeoJson {
+  name: String!
 }
 
 # returns this array of strings
