@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { MapComponent } from "../components/mapComponent";
+import MapComponent from "../components/mapComponent";
 import "leaflet/dist/leaflet.css";
 
 export const MapPage = () => {
