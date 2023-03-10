@@ -1,7 +1,7 @@
 export async function httpGetGeoJsonData() {
-  const res = await fetch(`/geo`, {
+  const res = await fetch("http://localhost:8000/geo", {
     method: "get",
   });
-  const data = await JSON.stringify(res);
+  const data = await res.json();
   return data;
 }
