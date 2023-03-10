@@ -1,4 +1,4 @@
-const httpGetGeoJsonData = require("../routes/geojson.controller");
+const { httpGetGeoJsonData } = require("../routes/geojson.controller");
 
 const express = require("express");
 const geoRouter = express.Router();
