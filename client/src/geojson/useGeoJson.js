@@ -1,21 +1,21 @@
 import { useState, useCallback, useEffect } from "react";
 import { httpGetGeoJsonData } from "./requests";
 
-// function useGeoJson() {
-//   const [geoJsonData, setGeoJsonData] = useState([]);
+function useGeoJson() {
+  const [geoJsonData, setGeoJsonData] = useState([]);
 
-//   const getGeoJsonData = useCallback(async () => {
-//     console.log("calling getGeoJsonData!!");
+  const getGeoJsonData = useCallback(async () => {
+    console.log("calling getGeoJsonData!!");
 
-//     const fetchedData = await httpGetGeoJsonData();
-//     setGeoJsonData(fetchedData);
-//   }, []);
+    const fetchedData = await httpGetGeoJsonData();
+    setGeoJsonData(fetchedData);
+  }, []);
 
-//   useEffect(() => {
-//     getGeoJsonData();
-//   }, [getGeoJsonData]);
+  useEffect(() => {
+    getGeoJsonData();
+  }, [getGeoJsonData]);
 
-//   return { geoJsonData };
-// }
+  return { geoJsonData };
+}
 
-// export default useGeoJson;
+export default useGeoJson;
