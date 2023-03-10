@@ -9,6 +9,7 @@ const { makeExecutableSchema } = require("@graphql-tools/schema");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const { mongoConnect } = require("./services/mongo");
+const { geoRouter } = require("./routes/geojson.router");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,6 +43,7 @@ async function startApolloServer() {
   // tell express to forward any requests at this path to apolloServer!
   // context will be 2nd para later
   app.use("/graphql", expressMiddleware(server));
+  app.use("/geo", geoRouter);
   // old apollo way V3 ---> connect the middleware with express server
   //   server.applyMiddleware({
   //     app: app,

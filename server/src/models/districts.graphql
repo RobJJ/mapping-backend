@@ -23,7 +23,11 @@ type GeoJson {
 type Features {
   type: String!
   properties: Object!
-  geometry: Object!
+  geometry: Geometry!
+}
+type Geometry {
+  type: String!
+  coordinates: [JSON!]
 }
 
 #
