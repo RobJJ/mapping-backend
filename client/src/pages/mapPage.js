@@ -9,7 +9,6 @@ export const MapPage = () => {
 
   return (
     <div>
-      return (
       <MapContainer
         center={defaultPosition}
         zoom={5}
@@ -24,7 +23,6 @@ export const MapPage = () => {
 
         <MapComponent />
       </MapContainer>
-      );
     </div>
   );
 };

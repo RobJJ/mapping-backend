@@ -30,7 +30,8 @@ const featureSchema = new mongoose.Schema({
       ],
     },
     coordinates: {
-      type: [[[Number]]],
+      type: [[[[Number]]]],
+      index: "2dsphere",
       required: true,
     },
   },

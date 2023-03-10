@@ -2,5 +2,6 @@ export async function httpGetGeoJsonData() {
   const res = await fetch(`/geo`, {
     method: "get",
   });
-  return await res.json();
+  const data = await JSON.stringify(res);
+  return data;
 }

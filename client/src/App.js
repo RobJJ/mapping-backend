@@ -6,7 +6,7 @@ import { MapPage } from "./pages/mapPage";
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
+      <div className="bg-blue-200 w-screen h-screen">
         <MapPage />
       </div>
     </ApolloProvider>
