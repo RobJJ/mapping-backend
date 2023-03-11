@@ -1,24 +1,28 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GeoJSON } from "react-leaflet";
 // import L from "leaflet";
 import useGeoJson from "../geojson/useGeoJson";
 import { style } from "../map-functions/map-functions";
-import { vietnamGeoJSON } from "../testData/geodata";
-
+// import { vietnamGeoJSON } from "../testData/geodata";
+import { vietnamGeoJSON2 } from "../testData/geodata2";
+import { httpGetGeoJsonData } from "../geojson/requests";
 // import useGeoJson from "../geojson/useGeoJson";
 
-function MapComponent(params) {
-  const { geoJsonData } = useGeoJson();
-  console.log(geoJsonData);
+function MapComponent({ geoData }) {
   const ref = useRef();
+  console.log(geoData);
+  // const { geoDataVietnam } = useGeoJson();
+
+  // const { geoJsonData } = useGeoJson();
+  // console.log(geoJsonData);
 
   return (
     <>
       <GeoJSON
         // onEachFeature={onEachFeature}
         style={style}
-        // data={geoJsonData}
-        data={vietnamGeoJSON}
+        data={geoData}
+        // data={vietnamGeoJSON2}
         ref={ref}
       ></GeoJSON>
     </>

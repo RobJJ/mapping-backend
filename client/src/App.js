@@ -1,4 +1,5 @@
 import { ApolloProvider } from "@apollo/client";
+import useGeoJson from "./geojson/useGeoJson";
 import { client } from "./graphql/graphql.queries";
 import { MainPage } from "./pages/mainPage";
 import { MapPage } from "./pages/mapPage";

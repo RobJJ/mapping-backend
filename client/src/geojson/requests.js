@@ -3,5 +3,6 @@ export async function httpGetGeoJsonData() {
     method: "get",
   });
   const data = await res.json();
-  return data;
+  console.log(data[0]);
+  return data[0];
 }
