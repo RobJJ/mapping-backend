@@ -5,10 +5,14 @@ import { MainPage } from "./pages/mainPage";
 import { MapPage } from "./pages/mapPage";
 
 function App() {
+  const { geoJsonData } = useGeoJson();
+  console.log(geoJsonData);
+
   return (
     <ApolloProvider client={client}>
       <div className=" w-screen h-screen p-5">
-        <MapPage />
+        {!geoJsonData && <div>Im the loading page...</div>}
+        {geoJsonData && <MapPage geoData={geoJsonData} />}
       </div>
     </ApolloProvider>
   );

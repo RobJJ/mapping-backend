@@ -2,22 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import MapComponent from "../components/mapComponent";
 import "leaflet/dist/leaflet.css";
-import { httpGetGeoJsonData } from "../geojson/requests";
 
-export const MapPage = () => {
+export const MapPage = ({ geoData }) => {
   const mapRef = useRef();
   const defaultPosition = [16.06, 108.21];
-
-  const [geoData, setGeoData] = useState({});
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await httpGetGeoJsonData();
-
-      setGeoData({ ...data });
-    }
-    fetchData();
-  }, []);
 
   return (
     <MapContainer
