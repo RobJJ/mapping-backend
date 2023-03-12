@@ -1,5 +1,5 @@
 export function style(feature) {
-  console.log("being called?");
+  // console.log("being called?");
   return {
     fillColor: "#005a32",
     weight: 2,

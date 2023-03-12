@@ -5,7 +5,7 @@ function useGeoJson() {
   const [geoJsonData, setGeoJsonData] = useState([]);
 
   const getGeoJsonData = useCallback(async () => {
-    console.log("calling getGeoJsonData!!");
+    // console.log("calling getGeoJsonData!!");
 
     const fetchedData = await httpGetGeoJsonData();
     setGeoJsonData(fetchedData);

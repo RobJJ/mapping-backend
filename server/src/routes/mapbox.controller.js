@@ -1,8 +1,7 @@
-const mapboxUrl = process.env.MAPBOX_URL;
+// const MAPBOX_URL = process.env.MAPBOX_URL;
 
-async function httpGetMapboxUrl(req, res) {
-  console.log("mapbox router hit... the url is: ", mapboxUrl);
-  return res.status(200);
+function httpGetMapboxUrl(req, res) {
+  return res.status(200).json({ MAPBOX_URL: `${process.env.MAPBOX_URL}` });
 }
 
 module.exports = { httpGetMapboxUrl };

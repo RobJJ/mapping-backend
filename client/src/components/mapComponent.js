@@ -18,7 +18,7 @@ function MapComponent({ geoData }) {
   // const { geoDataVietnam } = useGeoJson();
 
   // const { geoJsonData } = useGeoJson();
-  console.log(geoData);
+  // console.log(geoData);
 
   return (
     <>

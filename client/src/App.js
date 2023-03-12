@@ -6,7 +6,7 @@ import { MapPage } from "./pages/mapPage";
 
 function App() {
   const { geoJsonData } = useGeoJson();
-  console.log(geoJsonData);
+  // console.log(geoJsonData);
 
   return (
     <ApolloProvider client={client}>
