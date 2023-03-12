@@ -3,14 +3,15 @@ import { ApolloProvider } from "@apollo/client";
 import { client } from "./graphql/graphql.queries";
 import { MainPage } from "./pages/mainPage";
 import { MapPage } from "./pages/mapPage";
+import useGeoJson from "./geojson/useGeoJson";
 
 function App() {
-  // console.log(geoJsonData);
-
+  const { geoJsonData } = useGeoJson();
   return (
     <ApolloProvider client={client}>
       <div className=" w-screen h-screen p-5">
-        <MapPage />
+        {!geoJsonData && <div>Loading...</div>}
+        {geoJsonData && <MapPage data={geoJsonData} />}
       </div>
     </ApolloProvider>
   );
