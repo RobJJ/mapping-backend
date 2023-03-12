@@ -24,6 +24,7 @@ function MapComponent({ geoData }) {
     <>
       <GeoJSON
         // onEachFeature={onEachFeature}
+        // this key is important to tell the map that the data has rendered!
         key={hashKey}
         style={style}
         data={geoData}

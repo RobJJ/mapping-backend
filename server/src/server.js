@@ -10,6 +10,7 @@ const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const { mongoConnect } = require("./services/mongo");
 const { geoRouter } = require("./routes/geojson.router");
+const { mapboxRouter } = require("./routes/mapbox.router");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -44,6 +45,7 @@ async function startApolloServer() {
   // context will be 2nd para later
   app.use("/graphql", expressMiddleware(server));
   app.use("/geo", geoRouter);
+  app.use("/mapbox", mapboxRouter);
   // old apollo way V3 ---> connect the middleware with express server
   //   server.applyMiddleware({
   //     app: app,
