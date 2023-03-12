@@ -12,9 +12,9 @@ import { httpGetGeoJsonData } from "../geojson/requests";
 function MapComponent({ geoData }) {
   let hashKey = uuidv4();
   const ref = useRef();
-  useEffect(() => {
-    hashKey = uuidv4();
-  }, [geoData]);
+  // useEffect(() => {
+  //   hashKey = uuidv4();
+  // }, [geoData]);
   // const { geoDataVietnam } = useGeoJson();
 
   // const { geoJsonData } = useGeoJson();

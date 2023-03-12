@@ -3,7 +3,7 @@ export async function httpGetMapboxUrl() {
     method: "get",
   });
   const data = await res.json();
-  console.log("data omcing here: ", data);
+  // console.log("data omcing here: ", data);
 
   return data;
 }
