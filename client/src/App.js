@@ -6,12 +6,13 @@ import { MapPage } from "./pages/mapPage";
 import useGeoJson from "./geojson/useGeoJson";
 
 function App() {
-  const { geoJsonData } = useGeoJson();
+  const { geoJsonData, geoVietnam } = useGeoJson();
+  // console.log(geoVietnam);
   return (
     <ApolloProvider client={client}>
       <div className=" w-screen h-screen p-5">
         {!geoJsonData && <div>Loading...</div>}
-        {geoJsonData && <MapPage data={geoJsonData} />}
+        {geoJsonData && <MapPage data={geoJsonData} datatwo={geoVietnam} />}
       </div>
     </ApolloProvider>
   );

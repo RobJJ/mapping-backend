@@ -9,10 +9,11 @@ import { v4 as uuidv4 } from "uuid";
 import { style } from "../map-functions/map-functions";
 import { httpGetGeoJsonData } from "../geojson/requests";
 import { vietnamGeoJSON2 } from "../testData/geodata2";
+import { testdata } from "../testData/viettestdata";
 
 const defaultPosition = [16.06, 108.21];
 
-export const MapPage = ({ data }) => {
+export const MapPage = ({ data, datatwo }) => {
   // const [url, setUrl] = useState(null);
   // // const mapRef = useRef();
 
@@ -64,7 +65,8 @@ export const MapPage = ({ data }) => {
         // this key is important to tell the map that the data has rendered!
         key={uuidv4()}
         style={style}
-        data={data}
+        // data={data}
+        data={datatwo}
         ref={mapRef}
       ></GeoJSON>
     </MapContainer>
